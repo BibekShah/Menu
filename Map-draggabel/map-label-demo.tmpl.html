@@ -1,0 +1,18 @@
+<div>
+	<ui-gmap-google-map center="vm.labeledMap.center" zoom="vm.labeledMap.zoom" options="vm.labeledMap.options">
+		<ui-gmap-polylines models="vm.polylines" path="vm.pathData" id="1" stroke="'stroke'" visible="'visible'" geodesic="'geodesic'" fit="false" 		editable="'editable'" draggable="'draggable'" icons="'icons'">
+	   	</ui-gmap-polylines>
+	   	<!-- marker over here -->
+	   	<ui-gmap-marker ng-repeat = "m in vm.labeledMap.locationData" coords="m" idkey="m.id" options="vm.labeledMap.marker.options">
+	    	<ui-gmap-window show="true">
+	            <div>
+	               	<div>
+	               		<img ng-src="{{m.imageUrl}}" alt="{{m.name}}" style="width: 50px; height: 50px">
+	               	</div>
+	            </div>
+	        </ui-gmap-window>
+	    </ui-gmap-marker>
+	</ui-gmap-google-map>
+</div>
+
+
